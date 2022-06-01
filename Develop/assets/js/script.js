@@ -77,4 +77,4 @@ function saveTextHandler(event) {
 containerEl.on("click", saveTextHandler);
 
 // set interval to 1 second refresh
-//setInterval(updateCalendar, 1000);
+setInterval(updateCalendar, 1000);
