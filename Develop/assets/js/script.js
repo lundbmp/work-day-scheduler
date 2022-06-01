@@ -7,12 +7,12 @@ need to establish moment to tell current local time
 when we have local time printed to console, we can then  plan on how it fits in the code
 */
 
-$(document).ready(updateCalendar());
+$(document).ready(loadCalendar(), updateCalendar());
 
 // hour slot object
 function hourSlotObj(id) {
-    this.elId = id;
-    this.hour = id.split("-")[1];
+    this.elId = "#" + id;
+    this.hour = parseInt(id.split("-")[1]);
 }
 
 // function to load calendar from the DOM
@@ -25,14 +25,17 @@ function loadCalendar() {
     }
 }
 
-loadCalendar();
-
-hourArray.push(new hourSlot("hour-11"));
-
-console.log(hourArray[0].hour);
-
+// this will update the color of the scheduler
 function updateCalendar() {
-    
+    for(let hourSlot of hourArray) {
+        if(hourSlot.hour === moment().hour()) {
+            $(hourSlot.elId).css("background-color", "LightCoral");
+        } else if(hourSlot.hour <= moment().hour()) {
+            $(hourSlot.elId).css("background-color", "LightGrey");
+        } else if(hourSlot.hour >= moment().hour()) {
+            $(hourSlot.elId).css("background-color", "LightGreen");
+        }
+    }
 };
 
-//setInterval(updateCalendar, 10000);
+setInterval(updateCalendar, 1000);
