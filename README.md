@@ -9,6 +9,8 @@ To run this program offline, you will need to download the repository and run th
 ## How to Use the Project
 The project will automatically cycle through the the timeslots based on your local time. To add your own notes to the scheduler you simply click on the text field and enter in your text. To save the text, click on the blue save button. Your text will be stored on your local storage.
 
+![screencapture-lundbmp-github-io-work-day-scheduler-2022-06-05-10_42_03](https://user-images.githubusercontent.com/35671768/172058670-d2d59f9a-4e06-48cd-b8e3-ebab79d5d7b8.png)
+
 ## Credits
 The initial code was supplied by Xandromus.
 The project was completed by Michael Lundberg.
